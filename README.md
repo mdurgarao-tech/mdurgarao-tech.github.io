@@ -1,1 +1,0 @@
-# mdurgarao-tech.github.io
