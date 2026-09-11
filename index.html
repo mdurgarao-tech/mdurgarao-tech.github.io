@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miriyala Durga Rao | WAF &amp; Application Security Engineer</title>
+<meta name="description" content="WAF and Application Security Engineer specializing in Imperva WAF, API Security, OWASP, Cloud WAF, and enterprise network security. 6+ years cybersecurity, 4 years hands-on Imperva WAF. Hyderabad, India.">
+<meta name="keywords" content="WAF Engineer, Application Security, Imperva WAF, Akamai, AWS WAF, Azure WAF, Cloudflare, FortiWeb, OWASP Top 10, API Security, Bot Mitigation, Zscaler, Palo Alto, Fortinet, Check Point, FireMon, F5 LTM, Cloud Security, Hyderabad">
+<meta property="og:title" content="Miriyala Durga Rao | WAF &amp; Application Security Engineer">
+<meta property="og:description" content="WAF and Application Security Engineer — Imperva WAF, API Security, OWASP, Cloud WAF, enterprise network security.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --ink:#0a0e14;
+    --panel:#111823;
+    --panel-2:#161f2c;
+    --line:#243040;
+    --txt:#e6edf3;
+    --muted:#9aa7b4;
+    --dim:#6b7885;
+    --cyan:#38bdf8;
+    --cyan-2:#7dd3fc;
+    --blue:#1e6fb5;
+    --accent:#ff8a3d;
+    --allow:#3fb950;
+    --block:#f85149;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--ink);color:var(--txt);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{padding:80px 0;border-top:1px solid var(--line)}
+  .sec-label{color:var(--cyan);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+  h2{font-size:32px;font-weight:800;margin-bottom:28px;letter-spacing:-0.5px}
+  h3{font-size:19px;font-weight:700;margin-bottom:8px}
+  p{color:var(--muted)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,14,20,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-weight:800;letter-spacing:-0.3px}
+  .brand span{color:var(--cyan)}
+  .nav-links{display:flex;gap:26px;font-size:14px}
+  .nav-links a{color:var(--muted);transition:color .15s}
+  .nav-links a:hover{color:var(--txt)}
+  .nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:6px 10px;cursor:pointer}
+
+  /* hero */
+  .hero{padding:96px 0 84px;position:relative;overflow:hidden}
+  .hero-glow{position:absolute;top:-120px;right:-120px;width:420px;height:420px;background:radial-gradient(circle,rgba(30,111,181,0.28),transparent 65%);pointer-events:none}
+  .hero-tag{color:var(--cyan);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+  .hero h1{font-size:52px;line-height:1.08;font-weight:800;margin:14px 0 10px;letter-spacing:-1px}
+  .hero .sub{font-size:21px;color:var(--cyan-2);font-weight:600;margin-bottom:20px}
+  .hero .intro{max-width:620px;font-size:17px;margin-bottom:24px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+  .chip{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:13px;font-weight:600;color:var(--cyan-2)}
+  .btns{display:flex;flex-wrap:wrap;gap:14px}
+  .btn{padding:12px 22px;border-radius:10px;font-weight:600;font-size:15px;cursor:pointer;transition:transform .1s,background .15s;display:inline-flex;align-items:center;gap:8px}
+  .btn-primary{background:var(--cyan);color:#04121f}
+  .btn-primary:hover{background:var(--cyan-2)}
+  .btn-ghost{background:transparent;border:1px solid var(--line-2,#374350);color:var(--txt);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--cyan)}
+  .avail{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-size:14px;color:var(--muted)}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--allow);box-shadow:0 0 8px var(--allow)}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:760px}
+  .about-grid p{font-size:16px}
+
+  /* expertise cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;transition:border-color .15s,transform .15s}
+  .card:hover{border-color:var(--cyan);transform:translateY(-2px)}
+  .card .ico{font-size:22px;margin-bottom:10px;display:block}
+  .card p{font-size:14px}
+  .card h3{color:var(--cyan-2)}
+
+  /* experience timeline */
+  .exp{border-left:2px solid var(--line);padding-left:24px;margin-left:6px}
+  .exp-item{position:relative;padding-bottom:32px}
+  .exp-item:last-child{padding-bottom:0}
+  .exp-item::before{content:"";position:absolute;left:-31px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px var(--ink)}
+  .exp-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:baseline}
+  .exp-role{font-weight:700;font-size:17px}
+  .exp-co{color:var(--cyan-2);font-size:15px;font-weight:600}
+  .exp-date{color:var(--dim);font-size:13px;font-family:monospace}
+  .exp-item ul{margin:10px 0 0 0;padding-left:18px}
+  .exp-item li{color:var(--muted);font-size:14.5px;margin-bottom:5px}
+  .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .tag{background:var(--panel-2);border:1px solid var(--line);border-radius:6px;padding:3px 9px;font-size:12px;color:var(--dim)}
+  .c2h-note{background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:13px;color:var(--muted);margin-top:8px}
+  .c2h-note b{color:var(--txt)}
+
+  /* projects */
+  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .proj{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column}
+  .proj .path{font-family:monospace;font-size:12px;color:var(--cyan);margin-bottom:6px}
+  .proj p{font-size:14px;flex:1;margin-bottom:12px}
+  .proj .status{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:5px;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px}
+  .st-live{background:rgba(63,185,80,0.12);color:var(--allow);border:1px solid rgba(63,185,80,0.3)}
+  .st-soon{background:rgba(255,138,61,0.12);color:var(--accent);border:1px solid rgba(255,138,61,0.3)}
+  .glink{color:var(--cyan);font-size:14px;font-weight:600}
+  .glink:hover{color:var(--cyan-2)}
+
+  /* case study */
+  .case{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px;margin-bottom:16px}
+  .case h3{color:var(--cyan-2);font-size:20px}
+  .case .row{margin-top:14px}
+  .case .k{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:3px}
+  .case .v{font-size:15px;color:var(--muted)}
+  .sanitized{font-size:12px;color:var(--accent);border:1px solid rgba(255,138,61,0.3);background:rgba(255,138,61,0.08);border-radius:6px;padding:4px 10px;display:inline-block;margin-top:14px}
+
+  /* tools */
+  .tools-group{margin-bottom:20px}
+  .tools-group .gl{font-size:13px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+  .tools-row{display:flex;flex-wrap:wrap;gap:8px}
+  .tool{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 13px;font-size:13.5px;color:var(--txt)}
+
+  /* certs */
+  .certs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .cert{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;gap:14px;align-items:center}
+  .cert .badge{width:44px;height:44px;border-radius:10px;background:var(--panel-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+  .cert .st{font-size:12px;color:var(--dim)}
+  .cert .st.done{color:var(--allow)}
+  .cert .st.prog{color:var(--accent)}
+
+  /* contact */
+  .contact-panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:36px}
+  .contact-panel p{font-size:16px;max-width:560px;margin-bottom:22px}
+  .contact-grid{display:flex;flex-wrap:wrap;gap:12px}
+  .cbtn{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:11px 16px;font-size:14px;display:inline-flex;align-items:center;gap:9px;transition:border-color .15s}
+  .cbtn:hover{border-color:var(--cyan)}
+  .cbtn .ico{color:var(--cyan)}
+
+  footer{border-top:1px solid var(--line);padding:36px 0;text-align:center}
+  footer .fb{font-weight:800;margin-bottom:4px}
+  footer .fb span{color:var(--cyan)}
+  footer p{font-size:13px;color:var(--dim)}
+  footer .fl{margin:12px 0;display:flex;gap:18px;justify-content:center;font-size:14px}
+  footer .fl a{color:var(--muted)}
+  footer .fl a:hover{color:var(--cyan)}
+
+  @media(max-width:860px){
+    .cards{grid-template-columns:repeat(2,1fr)}
+    .projects{grid-template-columns:1fr}
+    .certs{grid-template-columns:1fr}
+    .hero h1{font-size:40px}
+  }
+  @media(max-width:600px){
+    .nav-links{display:none;position:absolute;top:56px;left:0;right:0;flex-direction:column;background:var(--ink);border-bottom:1px solid var(--line);padding:16px 24px;gap:16px}
+    .nav-links.open{display:flex}
+    .nav-toggle{display:block}
+    .cards{grid-template-columns:1fr}
+    .hero h1{font-size:32px}
+    .hero .sub{font-size:18px}
+    section{padding:56px 0}
+    h2{font-size:26px}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+  :focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand">Miriyala Durga Rao<span>.</span></div>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    <div class="nav-links" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#github">GitHub</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div class="hero-tag">WAF &amp; Application Security</div>
+    <h1>WAF &amp; Application<br>Security Engineer</h1>
+    <div class="sub">Protecting Web Applications &amp; APIs | Securing Digital Business</div>
+    <p class="intro">Cybersecurity professional with 6+ years of experience across WAF, application security, API protection, cloud security, and enterprise network security — including 4 years of hands-on Imperva WAF experience.</p>
+    <div class="chips">
+      <span class="chip">Imperva WAF</span>
+      <span class="chip">API Security</span>
+      <span class="chip">OWASP</span>
+      <span class="chip">Cloud WAF</span>
+      <span class="chip">Network Security</span>
+    </div>
+    <div class="btns">
+      <a class="btn btn-primary" href="#projects">View Security Projects</a>
+      <a class="btn btn-ghost" href="RESUME_FILE_PLACEHOLDER.pdf" download>Download Resume</a>
+      <a class="btn btn-ghost" href="#contact">Contact Me</a>
+    </div>
+    <div class="avail"><span class="dot"></span> Immediate Joiner &middot; Hyderabad &middot; On-site or Hybrid</div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-label">// about</div>
+    <h2>Professional Summary</h2>
+    <div class="about-grid">
+      <p>I'm a WAF and Application Security Engineer focused on protecting enterprise web applications and APIs at the application layer. My core work is WAF policy design and rule tuning, OWASP Top 10 protection, API onboarding and protection, bot mitigation, rate limiting, and — the part that matters most — false-positive reduction, so protection stays strong without blocking legitimate traffic.</p>
+      <p>I've worked hands-on with Imperva WAF for four years, alongside Akamai, AWS WAF, Azure WAF, Cloudflare, and FortiWeb. This is backed by solid network security depth: Zscaler ZIA/ZPA, Palo Alto, Fortinet, Check Point, Cisco ASA, F5 LTM, and FireMon. I automate the repetitive work with Python and Ansible and operate inside ITIL/ServiceNow incident, problem, and change management.</p>
+      <p>I collaborate closely with application, infrastructure, DevOps, and SRE teams to onboard applications safely and resolve security and access issues, and I care about continuously improving security posture rather than just keeping the lights on.</p>
+    </div>
+  </div>
+</section>
+
+<section id="expertise">
+  <div class="wrap">
+    <div class="sec-label">// core expertise</div>
+    <h2>Core Expertise</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="ico">🛡️</span>
+        <h3>Web Application Firewall</h3>
+        <p>Imperva WAF, WAF policy management, custom and managed rules, rule tuning, enforcement modes (detection &rarr; blocking), WAF monitoring and log analysis.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🔌</span>
+        <h3>Application &amp; API Security</h3>
+        <p>Application and REST API onboarding, OWASP Top 10 protection, request inspection, schema validation, authentication/authorization concepts, API abuse protection.</p>
+      </div>
+      <div class="card">
+        <span class="ico">☁️</span>
+        <h3>Cloud WAF</h3>
+        <p>AWS WAF, Azure WAF, Cloudflare, Akamai WAF/CDN — cloud-edge protection, managed rulesets, and cloud-native WAF audits.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🎯</span>
+        <h3>Threat Protection</h3>
+        <p>SQL injection, XSS, path traversal, command injection, bot mitigation, rate limiting, L7 DDoS concepts, credential-abuse detection.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🌐</span>
+        <h3>Network Security</h3>
+        <p>Palo Alto/Panorama, Fortinet, Check Point, Cisco ASA, Zscaler ZIA/ZPA, F5 LTM, FireMon, firewall policy management, VPN, segmentation.</p>
+      </div>
+      <div class="card">
+        <span class="ico">⚙️</span>
+        <h3>Automation &amp; Operations</h3>
+        <p>Python, Ansible, WAF log analysis, reporting, operational documentation, incident response, RCA, and ITIL change management.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-label">// experience</div>
+    <h2>Experience Highlights</h2>
+    <div class="exp">
+
+      <div class="exp-item">
+        <div class="exp-head">
+          <div><span class="exp-role">WAF &amp; Network Security Engineer (C2H)</span> &mdash; <span class="exp-co">High Noon Consulting | Client: Deloitte USI</span></div>
+          <span class="exp-date">Jul 2026 – Sep 2026</span>
+        </div>
+        <ul>
+          <li>Managed day-to-day WAF operations across Imperva, Akamai, AWS WAF, Cloudflare and FortiWeb for globally distributed enterprise applications, tuning managed and custom rulesets against OWASP Top 10 and Layer 7 attacks.</li>
+          <li>Onboarded applications and REST APIs to WAF platforms — protection policies, API security rules, and staged production cutovers with application, DevOps and SRE teams.</li>
+          <li>Ran cloud-native WAF security audits for Azure-hosted applications; configured bot mitigation, rate limiting and IP-reputation controls against credential stuffing and L7 abuse.</li>
+        </ul>
+        <div class="c2h-note"><b>High Noon Consulting</b> is the payroll employer; <b>Deloitte USI</b> is the client; engagement structure is <b>C2H</b>.</div>
+        <div class="tag-row"><span class="tag">Imperva</span><span class="tag">Akamai</span><span class="tag">AWS WAF</span><span class="tag">Cloudflare</span><span class="tag">FortiWeb</span><span class="tag">OWASP</span></div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-head">
+          <div><span class="exp-role">Network Security Engineer</span> &mdash; <span class="exp-co">Unizen Technologies Pvt Ltd</span></div>
+          <span class="exp-date">Nov 2025 – Mar 2026</span>
+        </div>
+        <ul>
+          <li>Ran Zscaler ZIA/ZPA for a distributed enterprise — traffic forwarding, SSL inspection, URL filtering, and Zero Trust access.</li>
+          <li>Managed Palo Alto (Panorama) and Fortinet firewalls; cleaned redundant and overly permissive rules using FireMon to improve audit readiness.</li>
+        </ul>
+        <div class="tag-row"><span class="tag">Zscaler</span><span class="tag">Palo Alto</span><span class="tag">Fortinet</span><span class="tag">FireMon</span></div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-head">
+          <div><span class="exp-role">Cyber Security Consultant</span> &mdash; <span class="exp-co">LTIMindtree Limited</span></div>
+          <span class="exp-date">May 2025 – Oct 2025</span>
+        </div>
+        <ul>
+          <li>Delivered network security across Zscaler and multi-vendor firewalls (Palo Alto, Fortinet, Check Point) for enterprise clients.</li>
+          <li>Led a Blue Coat ProxySG-to-Zscaler migration — PAC redesign, traffic-forwarding cutover, and post-migration validation.</li>
+        </ul>
+        <div class="tag-row"><span class="tag">Zscaler</span><span class="tag">Palo Alto</span><span class="tag">Check Point</span><span class="tag">Blue Coat</span></div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-head">
+          <div><span class="exp-role">Network Security Analyst</span> &mdash; <span class="exp-co">Litehires Global Private Limited</span></div>
+          <span class="exp-date">Mar 2020 – Apr 2025</span>
+        </div>
+        <ul>
+          <li>Administered WAF platforms (Imperva, AWS WAF) — application onboarding, policy tuning, log analysis, false-positive reduction, and OWASP Top 10 protection, with 4 years of hands-on Imperva experience.</li>
+          <li>Audited and cleaned a 2,000+ rule firewall base across 50+ devices with FireMon, improving audit outcomes.</li>
+          <li>Supported Akamai CDN onboarding, DNS and SSL/TLS troubleshooting; ran Zscaler ZIA/ZPA and F5 LTM; applied AWS security controls (VPC, IAM, Security Groups, NACL).</li>
+        </ul>
+        <div class="tag-row"><span class="tag">Imperva</span><span class="tag">Akamai</span><span class="tag">AWS WAF</span><span class="tag">FireMon</span><span class="tag">F5 LTM</span><span class="tag">Zscaler</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-label">// security projects &amp; labs</div>
+    <h2>Security Projects &amp; Labs</h2>
+    <div class="projects">
+
+      <div class="proj">
+        <div class="path">~/waf-security-labs</div>
+        <span class="status st-live">Live</span>
+        <h3>WAF Security Labs</h3>
+        <p>OWASP Top 10 protection writeups (SQLi, XSS, path traversal, command injection) — attack concept, detection logic, blocking approach, and tuning notes. Vendor-neutral.</p>
+        <a class="glink" href="https://github.com/mdurgarao-tech/waf-security-labs" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+      </div>
+
+      <div class="proj">
+        <div class="path">~/waf-security-labs/false-positive-tuning</div>
+        <span class="status st-live">Live</span>
+        <h3>WAF False-Positive Tuning Methodology</h3>
+        <p>A repeatable method: detection &rarr; baseline &rarr; investigate &rarr; scope exception &rarr; staged enforcement &rarr; monitor. With a worked synthetic example.</p>
+        <a class="glink" href="https://github.com/mdurgarao-tech/waf-security-labs/tree/main/false-positive-tuning" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+      </div>
+
+      <div class="proj">
+        <div class="path">~/waf-security-labs/waf-log-analyzer</div>
+        <span class="status st-live">Live</span>
+        <h3>WAF Log Analyzer</h3>
+        <p>Python tool that parses WAF logs (synthetic sample data) and summarises blocked requests, top rule IDs, source IPs, and attack types for triage.</p>
+        <a class="glink" href="https://github.com/mdurgarao-tech/waf-security-labs/tree/main/waf-log-analyzer" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+      </div>
+
+      <div class="proj">
+        <div class="path">~/waf-security-labs/modsecurity-lab</div>
+        <span class="status st-soon">In Progress</span>
+        <h3>ModSecurity / OWASP CRS Lab</h3>
+        <p>Hands-on open-source WAF lab: custom rules, test requests, detection results, and tuning. Open-source lab, not production configuration.</p>
+        <a class="glink" href="https://github.com/mdurgarao-tech/waf-security-labs/tree/main/modsecurity-lab" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="casestudies">
+  <div class="wrap">
+    <div class="sec-label">// case study</div>
+    <h2>WAF Case Study</h2>
+
+    <div class="case">
+      <h3>Reducing WAF False Positives Without Weakening Protection</h3>
+      <div class="row"><div class="k">Context</div><div class="v">After onboarding a web application to a WAF, a managed SQL-injection ruleset began firing repeatedly on a free-text field, blocking legitimate user submissions.</div></div>
+      <div class="row"><div class="k">Problem</div><div class="v">Legitimate prose containing SQL-like words (e.g. "the SELECT dropdown doesn't update the table") triggered the rule — a false positive that risked blocking real users at scale.</div></div>
+      <div class="row"><div class="k">Approach</div><div class="v">Kept the rule in detection mode first, baselined the field's normal traffic, and investigated the blocked-traffic log to confirm the hits were customers, not attackers.</div></div>
+      <div class="row"><div class="k">Implementation</div><div class="v">Scoped a narrow exception to the specific parameter on the specific route — leaving SQLi enforcement fully active on every other parameter, including login and search — then moved to staged enforcement.</div></div>
+      <div class="row"><div class="k">Result</div><div class="v">False positives on that parameter dropped to zero with no reduction in protection coverage elsewhere; the exception was documented so the reasoning is clear to the next engineer.</div></div>
+      <div class="row"><div class="k">Tools</div><div class="v">WAF managed rulesets, detection/blocking enforcement modes, WAF log analysis.</div></div>
+      <span class="sanitized">Sanitized example based on professional methodology. No client-confidential data, production rules, or real logs are included.</span>
+    </div>
+
+    <div class="case">
+      <h3 style="color:var(--dim)">Additional case study — to be added</h3>
+      <p style="font-size:14px;margin-top:8px">Placeholder for a second sanitized case study (e.g. application/API onboarding, or bot-mitigation tuning). Replace with your own sanitized write-up before publishing. Keep it free of client-confidential detail.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="sec-label">// tools &amp; technologies</div>
+    <h2>Tools &amp; Technologies</h2>
+    <div class="tools-group">
+      <div class="gl">WAF &amp; Application Security</div>
+      <div class="tools-row">
+        <span class="tool">Imperva WAF</span><span class="tool">Akamai</span><span class="tool">AWS WAF</span><span class="tool">Azure WAF</span><span class="tool">Cloudflare</span><span class="tool">FortiWeb</span><span class="tool">OWASP Top 10</span><span class="tool">API Security</span>
+      </div>
+    </div>
+    <div class="tools-group">
+      <div class="gl">Network Security</div>
+      <div class="tools-row">
+        <span class="tool">Zscaler ZIA/ZPA</span><span class="tool">Palo Alto</span><span class="tool">Fortinet</span><span class="tool">Check Point</span><span class="tool">Cisco ASA</span><span class="tool">F5 LTM</span><span class="tool">FireMon</span>
+      </div>
+    </div>
+    <div class="tools-group">
+      <div class="gl">Automation &amp; Operations</div>
+      <div class="tools-row">
+        <span class="tool">Python</span><span class="tool">Ansible</span><span class="tool">ServiceNow</span><span class="tool">Incident Response</span><span class="tool">Firewall Policy Management</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certs">
+  <div class="wrap">
+    <div class="sec-label">// certifications &amp; education</div>
+    <h2>Certifications &amp; Education</h2>
+    <div class="certs">
+      <div class="cert">
+        <div class="badge">✅</div>
+        <div><h3 style="font-size:16px">CCNA — Cisco Certified Network Associate</h3><div class="st done">Completed 2026</div></div>
+      </div>
+      <div class="cert">
+        <div class="badge">📘</div>
+        <div><h3 style="font-size:16px">PCNSE — Palo Alto Networks</h3><div class="st prog">Pursuing</div></div>
+      </div>
+      <div class="cert">
+        <div class="badge">🎓</div>
+        <div><h3 style="font-size:16px">B.Tech, Computer Science &amp; Engineering</h3><div class="st">KKR &amp; KSR Institute of Technology &amp; Sciences (JNTU Kakinada), 2019</div></div>
+      </div>
+      <div class="cert">
+        <div class="badge">🗣️</div>
+        <div><h3 style="font-size:16px">Languages</h3><div class="st">English — Professional &middot; Telugu — Native &middot; Hindi — Proficient</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="github">
+  <div class="wrap">
+    <div class="sec-label">// technical work</div>
+    <h2>GitHub</h2>
+    <p style="max-width:620px;margin-bottom:20px">Public repositories with WAF, application security, and network automation labs — synthetic and open-source content only, no client-confidential material.</p>
+    <div class="btns">
+      <a class="btn btn-primary" href="https://github.com/mdurgarao-tech/waf-security-labs" target="_blank" rel="noopener">WAF Security Labs</a>
+      <a class="btn btn-ghost" href="https://github.com/mdurgarao-tech" target="_blank" rel="noopener">View GitHub Profile</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-label">// contact</div>
+    <h2>Let's Connect</h2>
+    <div class="contact-panel">
+      <p>Interested in WAF, Application Security, API Security, or Enterprise Network Security opportunities? I'm open to <b>WAF Engineer</b>, <b>Application Security Engineer</b>, and <b>Cloud Security</b> roles — based in Hyderabad, open to on-site and hybrid.</p>
+      <div class="contact-grid">
+        <a class="cbtn" href="mailto:miriyala.durgarao.career@gmail.com"><span class="ico">✉</span>miriyala.durgarao.career@gmail.com</a>
+        <a class="cbtn" href="tel:+916302671030"><span class="ico">☎</span>+91 63026 71030</a>
+        <a class="cbtn" href="https://www.linkedin.com/in/miriyala-durgarao" target="_blank" rel="noopener"><span class="ico">in</span>miriyala-durgarao</a>
+        <a class="cbtn" href="https://github.com/mdurgarao-tech" target="_blank" rel="noopener"><span class="ico">⌥</span>mdurgarao-tech</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fb">Miriyala Durga Rao<span>.</span></div>
+    <p>WAF &amp; Application Security Engineer | Protecting Web Applications &amp; APIs</p>
+    <div class="fl">
+      <a href="https://www.linkedin.com/in/miriyala-durgarao" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/mdurgarao-tech" target="_blank" rel="noopener">GitHub</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p>&copy; 2026 Miriyala Durga Rao. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // active nav highlight
+  const links=document.querySelectorAll('.nav-links a');
+  const secs=[...links].map(a=>document.querySelector(a.getAttribute('href')));
+  window.addEventListener('scroll',()=>{
+    let i=secs.length;
+    while(--i>=0 && window.scrollY+120 < secs[i].offsetTop){}
+    links.forEach(l=>l.style.color='');
+    if(i>=0) links[i].style.color='var(--cyan)';
+  });
+  // close mobile menu on link click
+  document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open')));
+</script>
+
+</body>
+</html>
