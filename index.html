@@ -3,139 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
 <title>Miriyala Durga Rao | WAF &amp; Network Security Engineer</title>
-<meta name="description" content="WAF and network security engineer in Hyderabad. Akamai, Imperva, AWS WAF, Cloudflare, Zscaler, multi-vendor firewalls.">
+<meta name="description" content="WAF and network security engineer in Hyderabad, India. Akamai, Imperva, Cloudflare, AWS WAF, Zscaler, CDN migration, multi-vendor firewalls.">
 <style>
   :root {
-    --bg: #eef2f5;
-    --surface: #ffffff;
-    --ink: #16232e;
-    --muted: #506272;
-    --line: #cdd8e0;
-    --accent: #1f5fbf;
-    --block: #b4432f;
+    color-scheme: dark;
+    --bg: #0f1a24;
+    --raise: #14232f;
+    --line: #27394a;
+    --ink: #e7eef4;
+    --muted: #9bb0bf;
+    --accent: #78b4f5;
+    --accent-ink: #08131d;
+    --waf: #f0937e;
     --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
     --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #101a23;
-      --surface: #16232e;
-      --ink: #e8eef3;
-      --muted: #9db0bf;
-      --line: #2b3d4b;
-      --accent: #6fa3ef;
-      --block: #e58a76;
-    }
-  }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-size: 1.0625rem;
-    line-height: 1.6;
-  }
+  html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 1.0625rem; line-height: 1.65; }
   a { color: var(--accent); text-underline-offset: 3px; }
-  a:focus-visible, .skip:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-  .skip { position: absolute; left: -999px; top: 0; background: var(--surface); padding: .5rem 1rem; }
-  .skip:focus { left: 1rem; top: 1rem; z-index: 10; }
-  .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.5rem; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+  .skip { position: absolute; left: -999px; top: 0; background: var(--raise); padding: .5rem 1rem; }
+  .skip:focus { left: 1rem; top: 1rem; z-index: 20; }
+  .wrap { max-width: 70rem; margin: 0 auto; padding: 0 1.5rem; }
 
-  header.top { padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
-  header.top .wrap { display: flex; flex-wrap: wrap; gap: .75rem 2rem; justify-content: space-between; align-items: baseline; }
-  header.top strong { font-family: var(--serif); font-size: 1.15rem; }
-  nav a { margin-right: 1.25rem; color: var(--muted); text-decoration: none; }
-  nav a:hover { color: var(--ink); text-decoration: underline; }
+  /* header */
+  .top { position: sticky; top: 0; z-index: 10; background: rgba(15,26,36,.94); border-bottom: 1px solid var(--line); }
+  .top .wrap { display: flex; flex-wrap: wrap; gap: .5rem 2rem; justify-content: space-between; align-items: baseline; padding-top: .9rem; padding-bottom: .9rem; }
+  .top strong { font-family: var(--serif); font-size: 1.1rem; }
+  .top nav a { margin-left: 1.25rem; color: var(--muted); text-decoration: none; font-size: .97rem; }
+  .top nav a:hover { color: var(--ink); text-decoration: underline; }
 
-  .hero { padding: 4.5rem 0 3rem; }
-  h1 {
-    font-family: var(--serif);
-    font-weight: 700;
-    font-size: clamp(2.6rem, 7vw, 4.75rem);
-    line-height: 1.02;
-    letter-spacing: -0.02em;
-    margin: 0 0 1.25rem;
-  }
-  .lede { font-size: 1.3rem; max-width: 40rem; margin: 0 0 .75rem; }
-  .facts { color: var(--muted); max-width: 40rem; margin: 0; }
+  /* hero */
+  .hero { padding: 4.5rem 0 3.25rem; }
+  h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(2.5rem, 7vw, 4.4rem); line-height: 1.03; letter-spacing: -.02em; margin: 0; }
+  .role { font-family: var(--serif); font-size: clamp(1.35rem, 3vw, 1.85rem); margin: .5rem 0 1.25rem; color: var(--accent); }
+  .stack { display: flex; flex-wrap: wrap; margin: 0 0 1.25rem; padding: 0; list-style: none; font-size: 1.05rem; }
+  .stack li { padding: 0 1rem; border-left: 1px solid var(--line); }
+  .stack li:first-child { padding-left: 0; border-left: 0; }
+  .facts { color: var(--muted); max-width: 42rem; margin: 0 0 1.75rem; }
+  .btns { display: flex; flex-wrap: wrap; gap: .75rem; margin: 0; padding: 0; list-style: none; }
+  .btn { display: inline-block; padding: .65rem 1.4rem; border-radius: 4px; border: 1px solid var(--accent); text-decoration: none; font-weight: 600; color: var(--accent); }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); }
+  .btn:hover { background: var(--raise); color: var(--ink); }
+  .btn.primary:hover { background: #a3ccf9; color: var(--accent-ink); }
 
-  /* The request path: the one memorable element */
-  .path { margin: 3.5rem 0 0; }
-  .path h2 { font-family: var(--serif); font-size: 1.3rem; margin: 0 0 .35rem; }
-  .path p.note { color: var(--muted); margin: 0 0 1.75rem; max-width: 42rem; }
-  .hops {
-    list-style: none; margin: 0; padding: 0;
-    display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
-    position: relative;
-  }
-  .hops::before {
-    content: ""; position: absolute; left: 10%; right: 10%; top: 1.05rem; height: 2px;
-    background: var(--line);
-  }
-  .hops::after {
-    content: ""; position: absolute; left: 10%; top: calc(1.05rem - 5px); width: 12px; height: 12px;
-    border-radius: 50%; background: var(--accent);
-    animation: travel 3.2s ease-in-out 0.4s 1 both;
-  }
-  @keyframes travel {
-    from { left: 10%; opacity: 1; }
-    60%  { left: 50%; }
-    to   { left: calc(90% - 12px); opacity: 1; }
-  }
-  .hop { text-align: center; padding: 0 .6rem; position: relative; }
-  .dot {
-    display: block; width: 2.1rem; height: 2.1rem; margin: 0 auto .75rem;
-    border-radius: 50%; background: var(--surface); border: 2px solid var(--muted);
-    position: relative; z-index: 1;
-  }
+  /* request path */
+  .path { margin-top: 3.5rem; }
+  .path h2 { font-family: var(--serif); font-size: 1.2rem; margin: 0 0 .3rem; }
+  .path .note { color: var(--muted); margin: 0 0 1.6rem; max-width: 42rem; font-size: .97rem; }
+  .hops { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); position: relative; }
+  .hops::before { content: ""; position: absolute; left: 10%; right: 10%; top: 1rem; height: 2px; background: var(--line); }
+  .hops::after { content: ""; position: absolute; left: 10%; top: calc(1rem - 5px); width: 12px; height: 12px; border-radius: 50%; background: var(--accent); animation: travel 3s ease-in-out .4s 1 both; }
+  @keyframes travel { from { left: 10%; } to { left: calc(90% - 12px); } }
+  .hop { text-align: center; padding: 0 .6rem; }
+  .dot { display: block; width: 2rem; height: 2rem; margin: 0 auto .7rem; border-radius: 50%; background: var(--bg); border: 2px solid var(--muted); position: relative; z-index: 1; }
   .hop.mine .dot { border-color: var(--accent); background: var(--accent); }
-  .hop.waf .dot { border-color: var(--block); background: var(--block); }
-  .hop b { display: block; font-family: var(--serif); font-size: 1.05rem; }
-  .hop span { display: block; color: var(--muted); font-size: .92rem; line-height: 1.45; margin-top: .25rem; }
+  .hop.waf .dot { border-color: var(--waf); background: var(--waf); }
+  .hop b { display: block; font-family: var(--serif); font-size: 1.02rem; }
+  .hop span { display: block; color: var(--muted); font-size: .9rem; line-height: 1.45; margin-top: .2rem; }
 
-  section { padding: 3rem 0; border-top: 1px solid var(--line); }
+  /* sections */
+  section { padding: 3.25rem 0; border-top: 1px solid var(--line); }
   .grid { display: grid; grid-template-columns: 13rem 1fr; gap: 1.5rem 3rem; }
-  h2.sec { font-family: var(--serif); font-size: 1.5rem; margin: 0; line-height: 1.2; }
-  .sub { color: var(--muted); font-size: .95rem; margin: .35rem 0 0; }
+  h2.sec { font-family: var(--serif); font-size: 1.55rem; line-height: 1.2; margin: 0; }
+  .sub { color: var(--muted); font-size: .95rem; margin: .4rem 0 0; }
+  h3 { font-family: var(--serif); font-size: 1.2rem; margin: 0 0 .35rem; }
+  h4 { font-size: 1rem; margin: 1.5rem 0 .35rem; }
+  p { margin: 0 0 .9rem; }
+  ul.plain { margin: 0 0 .9rem; padding-left: 1.15rem; }
+  ul.plain li { margin: 0 0 .3rem; }
+  .muted { color: var(--muted); }
 
-  .job { display: grid; grid-template-columns: 9.5rem 1fr; gap: .25rem 2rem; padding: 0 0 2rem; }
-  .job:last-child { padding-bottom: 0; }
-  .when { color: var(--muted); font-size: .95rem; }
-  .job h3 { font-family: var(--serif); font-size: 1.15rem; margin: 0; }
-  .job .co { color: var(--muted); margin: 0 0 .5rem; }
-  ul.plain { margin: 0; padding-left: 1.1rem; }
-  ul.plain li { margin: 0 0 .35rem; }
+  /* timeline */
+  .tl { list-style: none; margin: 0; padding: 0; }
+  .tl > li { display: grid; grid-template-columns: 8.5rem 1fr; gap: .25rem 2rem; padding: 0 0 2.25rem 0; position: relative; }
+  .tl > li:last-child { padding-bottom: 0; }
+  .yr { font-family: var(--serif); font-size: 1.15rem; color: var(--accent); }
+  .yr small { display: block; font-family: var(--sans); font-size: .85rem; color: var(--muted); }
+  .tl h3 { margin-bottom: .1rem; }
+  .tl .co { color: var(--muted); margin: 0 0 .6rem; }
 
-  .skills dt { font-weight: 600; margin-top: 1rem; }
-  .skills dt:first-child { margin-top: 0; }
-  .skills dd { margin: .15rem 0 0; color: var(--muted); }
+  /* case studies */
+  .case { padding: 0 0 3rem; }
+  .case:last-child { padding-bottom: 0; }
+  .tag { display: inline-block; font-size: .85rem; color: var(--muted); border: 1px solid var(--line); border-radius: 3px; padding: .1rem .6rem; margin: 0 .4rem .4rem 0; }
+  .tag.lab { color: var(--waf); border-color: var(--waf); }
+  .facts-list { display: grid; grid-template-columns: 11rem 1fr; gap: .35rem 1.5rem; margin: 1.1rem 0 0; }
+  .facts-list dt { color: var(--muted); }
+  .facts-list dd { margin: 0; }
+  ol.flow { list-style: none; margin: .6rem 0 0; padding: 0; counter-reset: s; position: relative; }
+  ol.flow::before { content: ""; position: absolute; left: .95rem; top: .9rem; bottom: .9rem; width: 2px; background: var(--line); }
+  ol.flow li { counter-increment: s; position: relative; padding: 0 0 .9rem 3rem; }
+  ol.flow li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 1.9rem; height: 1.9rem; border-radius: 50%; background: var(--raise); border: 2px solid var(--accent); text-align: center; line-height: 1.6rem; font-size: .85rem; font-weight: 600; }
+  ol.flow li.hot::before { border-color: var(--waf); }
+  ol.flow b { display: block; }
+  ol.flow span { color: var(--muted); font-size: .97rem; }
+  .qa { border-left: 2px solid var(--line); padding-left: 1.25rem; margin-top: 1.25rem; }
+  .qa h4 { margin-top: 1rem; }
+  .qa h4:first-child { margin-top: 0; }
+  .qa p { margin: 0; color: var(--muted); }
 
-  .proj { padding: 0 0 1.5rem; }
-  .proj:last-child { padding-bottom: 0; }
-  .proj h3 { font-family: var(--serif); font-size: 1.15rem; margin: 0 0 .25rem; }
-  .proj p { margin: 0; color: var(--muted); }
+  /* skills */
+  .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem 2.5rem; margin: 0; }
+  .skills div { border-top: 1px solid var(--line); padding-top: .6rem; }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: .15rem 0 0; color: var(--muted); font-size: .98rem; }
 
-  .certs { list-style: none; padding: 0; margin: 0; }
-  .certs li { padding: .5rem 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .certs { list-style: none; margin: 0; padding: 0; }
+  .certs li { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: .55rem 0; border-bottom: 1px solid var(--line); }
   .certs li:last-child { border-bottom: 0; }
-  .certs .d { color: var(--muted); }
 
-  footer { padding: 2.5rem 0 3.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .95rem; }
-  .contact a { display: inline-block; margin-right: 1.5rem; font-size: 1.1rem; }
+  footer { padding: 3rem 0 4rem; border-top: 1px solid var(--line); }
+  footer h2 { font-family: var(--serif); font-size: 1.55rem; margin: 0 0 .5rem; }
+  footer .links a { display: inline-block; margin-right: 1.5rem; font-size: 1.1rem; }
+  footer p.small { color: var(--muted); font-size: .95rem; margin-top: 1.5rem; }
 
   @media (max-width: 52rem) {
-    .grid, .job { grid-template-columns: 1fr; }
-    .hops { grid-template-columns: 1fr; gap: 1.5rem; }
+    .grid, .tl > li, .facts-list, .skills { grid-template-columns: 1fr; }
+    .hops { grid-template-columns: 1fr; gap: 1.4rem; }
     .hops::before, .hops::after { display: none; }
-    .hop { text-align: left; display: grid; grid-template-columns: 2.1rem 1fr; gap: 0 1rem; padding: 0; }
-    .dot { margin: .15rem 0 0; grid-row: 1 / span 2; }
+    .hop { text-align: left; display: grid; grid-template-columns: 2rem 1fr; gap: 0 1rem; padding: 0; }
+    .dot { margin: .1rem 0 0; grid-row: 1 / span 2; }
+    .top nav a { margin: 0 1rem 0 0; }
+    .stack li { padding: 0 .75rem; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .hops::after { animation: none; display: none; }
+    .hops::after { display: none; }
   }
 </style>
 </head>
@@ -146,130 +143,264 @@
   <div class="wrap">
     <strong>Miriyala Durga Rao</strong>
     <nav aria-label="Sections">
-      <a href="#work">Experience</a>
-      <a href="#cases">Selected work</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#migration">Migration</a>
+      <a href="#waf-ops">WAF operations</a>
+      <a href="#firemon">FireMon</a>
       <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <main id="main">
-  <div class="wrap">
-    <div class="hero">
-      <h1>I keep web applications reachable and hard to break.</h1>
-      <p class="lede">WAF and network security engineer based in Hyderabad. I tune rules, review blocked traffic, and move applications between CDNs without dropping users.</p>
-      <p class="facts">6.4 years in network security, about 3 to 4 of them on WAF and CDN work. Strongest on Akamai Kona Site Defender, Imperva, AWS WAF and Cloudflare. Available to join immediately.</p>
+  <div class="wrap hero">
+    <h1>Miriyala Durga Rao</h1>
+    <p class="role">WAF &amp; Network Security Engineer</p>
+    <ul class="stack" aria-label="Main platforms">
+      <li>Akamai</li>
+      <li>Imperva</li>
+      <li>Cloudflare</li>
+      <li>AWS WAF</li>
+      <li>Zscaler</li>
+      <li>CDN Migration</li>
+    </ul>
+    <p class="facts">6.4 years in network security, about 3 to 4 of them on WAF and CDN work. Based in Hyderabad, India. Available to join immediately.</p>
+    <ul class="btns">
+      <li><a class="btn primary" href="Miriyala_Durga_Rao_Resume.pdf">Resume</a></li>
+      <li><a class="btn" href="https://github.com/mdurgarao-tech">GitHub</a></li>
+      <li><a class="btn" href="https://www.linkedin.com/in/miriyala-durgarao">LinkedIn</a></li>
+      <li><a class="btn" href="#contact">Contact</a></li>
+    </ul>
 
-      <div class="path">
-        <h2>Where my work sits in a request</h2>
-        <p class="note">A request crosses several layers before it reaches an application. These are the ones I work on, and what I do at each.</p>
-        <ol class="hops">
-          <li class="hop">
-            <i class="dot"></i>
-            <div><b>Client</b><span>Users and Zscaler-managed devices, with ZIA and ZPA policy</span></div>
-          </li>
-          <li class="hop mine">
-            <i class="dot"></i>
-            <div><b>CDN edge</b><span>Akamai, Cloudflare, CloudFront: onboarding, DNS and TLS cutovers, migrations</span></div>
-          </li>
-          <li class="hop waf">
-            <i class="dot"></i>
-            <div><b>WAF</b><span>Akamai Kona, Imperva, AWS WAF, Azure WAF: rule tuning and false positives</span></div>
-          </li>
-          <li class="hop mine">
-            <i class="dot"></i>
-            <div><b>Firewall</b><span>Palo Alto, Fortinet, Check Point, Cisco ASA: policy changes and rule cleanup</span></div>
-          </li>
-          <li class="hop">
-            <i class="dot"></i>
-            <div><b>Origin</b><span>Application teams: I trace a failure through each layer to find where it happens</span></div>
-          </li>
-        </ol>
-      </div>
+    <div class="path">
+      <h2>Where my work sits in a request</h2>
+      <p class="note">A request crosses several layers before it reaches an application. These are the ones I work on.</p>
+      <ol class="hops">
+        <li class="hop"><i class="dot"></i><div><b>Client</b><span>Users and devices behind Zscaler ZIA and ZPA</span></div></li>
+        <li class="hop mine"><i class="dot"></i><div><b>CDN edge</b><span>Akamai, Cloudflare, CloudFront: onboarding, DNS and TLS, migration</span></div></li>
+        <li class="hop waf"><i class="dot"></i><div><b>WAF</b><span>Akamai Kona, Imperva, AWS WAF, Azure WAF: rules and false positives</span></div></li>
+        <li class="hop mine"><i class="dot"></i><div><b>Firewall</b><span>Palo Alto, Fortinet, Check Point, Cisco ASA: policy and rule review</span></div></li>
+        <li class="hop"><i class="dot"></i><div><b>Origin</b><span>Application teams: trace a failure through each layer to find where it happens</span></div></li>
+      </ol>
     </div>
   </div>
 
-  <section id="work" aria-labelledby="work-h">
+  <section id="about" aria-labelledby="about-h">
+    <div class="wrap grid">
+      <div><h2 class="sec" id="about-h">About</h2></div>
+      <div>
+        <p>I work on the path between a user and an application: the CDN, the WAF, the firewall and, for internal access, Zscaler. Most of my WAF and CDN work has been on Akamai, with Imperva, AWS WAF and Cloudflare alongside it.</p>
+        <p>I have also supported multi-vendor firewalls (Palo Alto, Fortinet, Check Point and Cisco ASA) and reviewed their rule bases with FireMon. I am strongest where these layers meet: tracing a failure through CDN, WAF, firewall and origin, and changing as little as needed to fix it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" aria-labelledby="exp-h">
     <div class="wrap grid">
       <div>
-        <h2 class="sec" id="work-h">Experience</h2>
-        <p class="sub">Most recent first</p>
+        <h2 class="sec" id="exp-h">Experience</h2>
+        <p class="sub">Oldest first</p>
       </div>
-      <div>
-        <div class="job">
-          <div class="when">Jul 2026 to Sep 2026</div>
+      <ol class="tl">
+        <li>
+          <div class="yr">2020 to 2025<small>Mar 2020 to Apr 2025</small></div>
           <div>
-            <h3>WAF &amp; Network Security Engineer</h3>
-            <p class="co">High Noon Consulting, working on the Deloitte USI global WAF team</p>
+            <h3>Network Security Analyst</h3>
+            <p class="co">Litehires Global, Bangalore</p>
             <ul class="plain">
-              <li>Supported Akamai Kona Site Defender WAF for enterprise web applications through ServiceNow requests.</li>
-              <li>Handled onboarding, audit and ruleset-upgrade requests for Cloud Native (Azure) WAF applications.</li>
-              <li>Reviewed WAF events and false-positive blocks, and tuned rules to keep legitimate traffic flowing.</li>
-              <li>Traced application access problems across WAF policy, HTTP headers, response codes and SAML/Azure AD sign-in.</li>
+              <li>Managed Akamai Kona Site Defender WAF and Akamai CDN: application onboarding, policy and rule configuration, event monitoring and false-positive tuning.</li>
+              <li>Supported the production migrations from Akamai to Cloudflare and to AWS CloudFront (<a href="#migration">case study below</a>).</li>
+              <li>Supported 50+ firewalls across Palo Alto, Fortinet, Check Point and Cisco ASA, and reviewed and optimized 2,000+ rules with FireMon (<a href="#firemon">case study below</a>).</li>
+              <li>Worked with Cisco ACI in production: APIC, tenants, VRFs, bridge domains and EPGs.</li>
+              <li>Troubleshot traffic across application, WAF, CDN, firewall and network layers.</li>
+              <li>Analysed bot and abnormal traffic in WAF and CDN data, and worked with application and SOC teams during production incidents.</li>
             </ul>
           </div>
-        </div>
-        <div class="job">
-          <div class="when">Nov 2025 to Mar 2026</div>
+        </li>
+        <li>
+          <div class="yr">2025<small>May to Oct 2025</small></div>
+          <div>
+            <h3>Cybersecurity Consultant (contract)</h3>
+            <p class="co">LTIMindtree, Hyderabad</p>
+            <ul class="plain">
+              <li>Administered and supported Zscaler ZIA and ZPA: URL filtering, cloud firewall, SSL inspection, application segments and access policies.</li>
+              <li>Integrated Zscaler with SAML/SSO and Azure AD, and troubleshot Client Connector issues.</li>
+              <li>Supported the move from Blue Coat ProxySG to Zscaler, validating policies before and after each change.</li>
+              <li>Supported Netskope SWG.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="yr">2025 to 2026<small>Nov 2025 to Mar 2026</small></div>
           <div>
             <h3>Network Security Engineer</h3>
             <p class="co">Unizen Technologies, Bangalore</p>
             <ul class="plain">
               <li>Onboarded applications and managed policies on Imperva WAF, AWS WAF and Cloudflare.</li>
               <li>Investigated SQL injection, XSS, file inclusion and command injection attempts using WAF and Splunk logs.</li>
-              <li>Worked with application teams to tune rules and add exceptions only where traffic was legitimate.</li>
+              <li>Handled false positives with application teams and added controlled exceptions.</li>
+              <li>Troubleshot WAF blocks, SSL/TLS problems and application accessibility. Tracked incidents and changes in ServiceNow.</li>
             </ul>
           </div>
-        </div>
-        <div class="job">
-          <div class="when">May 2025 to Oct 2025</div>
+        </li>
+        <li>
+          <div class="yr">2026<small>Jul to Sep 2026</small></div>
           <div>
-            <h3>Cybersecurity Consultant (contract)</h3>
-            <p class="co">LTIMindtree, Hyderabad</p>
+            <h3>WAF &amp; Network Security Engineer (contract-to-hire)</h3>
+            <p class="co">High Noon Consulting, on the Deloitte USI global WAF team</p>
             <ul class="plain">
-              <li>Administered Zscaler ZIA and ZPA: URL filtering, SSL inspection, application segments and access policies.</li>
-              <li>Integrated Zscaler with SAML/SSO and Azure AD, and troubleshot Client Connector issues.</li>
-              <li>Supported user migration from Blue Coat ProxySG to Zscaler, checking policies before and after each change.</li>
-              <li>Worked on Netskope SWG policies.</li>
+              <li>Supported Akamai Kona Site Defender WAF for enterprise applications through ServiceNow requests.</li>
+              <li>Handled Cloud Native (Azure) WAF onboarding, audit and ruleset-upgrade requests, plus WAF access requests and audit closeouts.</li>
+              <li>Reviewed WAF events and attack signatures, analysed false positives, and tuned rules.</li>
+              <li>Troubleshot application access across WAF policy, HTTP headers, response codes and SAML/Azure AD sign-in.</li>
+              <li>Analysed malicious API and automated traffic patterns in WAF events.</li>
             </ul>
           </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="migration" aria-labelledby="mig-h">
+    <div class="wrap grid">
+      <div>
+        <h2 class="sec" id="mig-h">Akamai CDN/WAF Migration Programme</h2>
+        <p class="sub">Flagship case study</p>
+      </div>
+      <div class="case">
+        <span class="tag">Production work</span><span class="tag">Litehires Global</span>
+        <p>One production migration programme, covering Akamai to Cloudflare and Akamai to AWS CloudFront. I supported the security and traffic-path side of it. This is described at process level, without customer details.</p>
+        <dl class="facts-list">
+          <dt>Environment</dt><dd>Akamai CDN and Kona Site Defender as the source. Cloudflare and AWS CloudFront as the targets. DNS, TLS certificates (ACM on the AWS side) and the application origins.</dd>
+          <dt>My role</dt><dd>Network Security Analyst. I supported WAF policy mapping, DNS and TLS preparation, cutover, validation, troubleshooting and documentation.</dd>
+        </dl>
+
+        <h4>Workflow</h4>
+        <ol class="flow">
+          <li><b>Application discovery</b><span>Identified the applications in scope.</span></li>
+          <li><b>Application inventory</b><span>Recorded the inventory before any change was made.</span></li>
+          <li><b>Staging / lower-environment validation</b><span>Validated the target setup in a lower environment before production.</span></li>
+          <li><b>WAF policy mapping</b><span>Mapped the Akamai security policy to the target platform.</span></li>
+          <li><b>DNS / CNAME preparation</b><span>Prepared the DNS and CNAME changes.</span></li>
+          <li><b>TTL reduction</b><span>Lowered the DNS TTL ahead of the cutover so that a change, or a rollback, takes effect quickly.</span></li>
+          <li><b>TLS / certificate validation</b><span>Validated the certificates and TLS setup on the target.</span></li>
+          <li><b>Production cutover</b><span>Moved traffic by DNS/CNAME change, with a rollback path to Akamai kept ready.</span></li>
+          <li><b>CDN / WAF / origin validation</b><span>Checked cache hit and miss behaviour, TLS versions, HTTP response codes and WAF events after go-live.</span></li>
+          <li class="hot"><b>HTTP 403 / 502 troubleshooting</b><span>Investigated 403 and 502 responses during the migration.</span></li>
+          <li class="hot"><b>Rollback validation</b><span>Rollback to Akamai was validated when it was required.</span></li>
+          <li><b>Post-cutover monitoring</b><span>Kept watching response codes, WAF events and origin behaviour after the change.</span></li>
+          <li><b>Migration documentation</b><span>Documented the migration findings and implementation details.</span></li>
+        </ol>
+
+        <div class="qa">
+          <h4>How did you validate the change?</h4>
+          <p>After go-live I checked four things: cache hit and miss behaviour, TLS versions, HTTP response codes and WAF events.</p>
+          <h4>How did you map WAF policies?</h4>
+          <p>I took the existing Akamai security policy and mapped the required controls to the target platform, then validated the result in a lower environment before production.</p>
+          <h4>How did you validate TLS and the origin?</h4>
+          <p>For TLS, the certificates on the target and the TLS versions clients negotiate. For the origin, that the CDN could reach it and that cache and origin behaviour matched what the application needed.</p>
+          <h4>How did you troubleshoot a 403?</h4>
+          <p>Find which layer sent it, using response headers and CDN or WAF logs for the same time, URI and method. If the WAF blocked it, find the rule and the part of the request that triggered it. If the WAF allowed it, follow the request on to the load balancer and application.</p>
+          <h4>How did you troubleshoot a 502?</h4>
+          <p>I do not treat it as a WAF block first. I check whether the CDN can reach the origin: DNS for the origin, connectivity, the TLS handshake and origin health. If the origin answers with an error, the problem is behind the CDN.</p>
+          <h4>How did you handle rollback?</h4>
+          <p>The rollback path to Akamai was prepared before cutover, the TTL was already lowered, and rollback was validated when it was required.</p>
         </div>
-        <div class="job">
-          <div class="when">Mar 2020 to Apr 2025</div>
-          <div>
-            <h3>Network Security Analyst</h3>
-            <p class="co">Litehires Global, Bangalore</p>
-            <ul class="plain">
-              <li>Managed Akamai Kona Site Defender WAF and CDN: onboarding, policy and rule configuration, event monitoring and false-positive tuning.</li>
-              <li>Supported production CDN migrations from Akamai to Cloudflare and to AWS CloudFront, with staged cutovers and rollback to Akamai ready.</li>
-              <li>Supported 50+ firewalls across Palo Alto, Fortinet, Check Point and Cisco ASA, and reviewed 2,000+ rules with FireMon.</li>
-            </ul>
-          </div>
+        <p class="muted" style="margin-top:1.25rem">Not included: the number of applications, traffic volumes, timelines and performance figures. I only state numbers I can defend. <a href="https://github.com/mdurgarao-tech/waf-security-labs/blob/main/docs/cdn-migration.md">Process notes on GitHub</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="waf-ops" aria-labelledby="ops-h">
+    <div class="wrap grid">
+      <div>
+        <h2 class="sec" id="ops-h">WAF Security Operations &amp; False-Positive Tuning</h2>
+        <p class="sub">Project</p>
+      </div>
+      <div class="case">
+        <span class="tag">Production work</span><span class="tag">Litehires, Unizen, Deloitte USI</span>
+        <p>Day-to-day WAF operations across several platforms and employers. The platforms were Akamai Kona Site Defender, Imperva, AWS WAF, Cloudflare and Cloud Native (Azure) WAF.</p>
+        <dl class="facts-list">
+          <dt>Environment</dt><dd>Enterprise web applications behind a CDN and WAF, with WAF and Splunk logs and ServiceNow for requests, incidents and changes.</dd>
+          <dt>My role</dt><dd>WAF onboarding, rule and policy configuration, event and attack-signature analysis, false-positive handling, and coordination with application teams.</dd>
+        </dl>
+
+        <h4>What the work covers</h4>
+        <ul class="plain">
+          <li>Application onboarding and security-policy configuration.</li>
+          <li>Event and attack-signature analysis, including SQL injection, XSS, file inclusion and command injection attempts.</li>
+          <li>Identifying false positives and handling them with controlled exceptions.</li>
+          <li>Working with application teams to understand legitimate traffic before changing a rule.</li>
+          <li>Reading HTTP headers, methods and response codes during an investigation.</li>
+          <li>Tracing a request from the CDN through the WAF to the origin.</li>
+          <li>Validating the result in production after a change.</li>
+        </ul>
+
+        <div class="qa">
+          <h4>How did you analyse WAF events?</h4>
+          <p>Start from the event and the rule that fired. Then match the source, URI, HTTP method and timestamp, look at the part of the request that triggered the rule, and decide whether it is an attack or normal application behaviour.</p>
+          <h4>How did you handle false positives?</h4>
+          <p>Confirm with the application team that the request is legitimate, then add a narrow exception scoped to that application, URI or parameter. I do not disable a whole rule. Then retest and watch the same rule's events.</p>
+          <h4>How did you troubleshoot a 403 or 502 in this work?</h4>
+          <p>The same method as in the migration case study: find which layer produced the response, then follow the request through CDN, WAF and origin before changing anything. <a href="https://github.com/mdurgarao-tech/waf-security-labs/blob/main/docs/troubleshooting-403-502.md">Method notes on GitHub</a>.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="cases" aria-labelledby="cases-h">
+  <section id="firemon" aria-labelledby="fm-h">
     <div class="wrap grid">
       <div>
-        <h2 class="sec" id="cases-h">Selected work</h2>
-        <p class="sub">Real work at previous employers, described without customer details</p>
+        <h2 class="sec" id="fm-h">FireMon Firewall Rule Optimization</h2>
+        <p class="sub">Project</p>
+      </div>
+      <div class="case">
+        <span class="tag">Production work</span><span class="tag">Litehires Global</span>
+        <p>Rule-base review and cleanup across 50+ firewalls, with 2,000+ rules optimized using FireMon.</p>
+        <dl class="facts-list">
+          <dt>Environment</dt><dd>Palo Alto, Fortinet, Check Point and Cisco ASA firewalls, with FireMon for rule analysis.</dd>
+          <dt>My role</dt><dd>Network Security Analyst. I reviewed rules, analysed shadowed and unused rules, validated with business owners, and supported the cleanup and the checks after each change.</dd>
+        </dl>
+
+        <h4>What I looked at</h4>
+        <ul class="plain">
+          <li><b>Shadowed rules:</b> rules that can never match because an earlier rule already covers the same traffic.</li>
+          <li><b>Unused rules:</b> rules with no matches over the review period.</li>
+          <li><b>Business-owner validation:</b> checking with the owner before changing or removing a rule.</li>
+          <li><b>Change validation and traffic-flow troubleshooting:</b> confirming the intended traffic still works after a change, and tracing it when it does not.</li>
+        </ul>
+
+        <div class="qa">
+          <h4>How did FireMon help?</h4>
+          <p>It analysed the rule bases and pointed to shadowed and unused rules, so the review started from evidence.</p>
+          <h4>Why check with business owners?</h4>
+          <p>Hit counts only show the past. A rule that looks unused may serve a process that runs rarely. Confirming with the owner is what makes a cleanup safe.</p>
+          <h4>How did you validate firewall rule changes?</h4>
+          <p>By checking that the intended traffic still passed after the change, and tracing the traffic flow when something did not work.</p>
+        </div>
+        <p class="muted" style="margin-top:1.25rem">The only figures here are 50+ firewalls and 2,000+ rules. I have not stated an optimization percentage. <a href="https://github.com/mdurgarao-tech/Network-Security-Labs/blob/main/firewalls/firemon-rule-review.md">Process notes on GitHub</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="github" aria-labelledby="gh-h">
+    <div class="wrap grid">
+      <div>
+        <h2 class="sec" id="gh-h">GitHub</h2>
+        <p class="sub">Lab projects, not employment experience</p>
       </div>
       <div>
-        <div class="proj">
-          <h3>CDN migration: Akamai to Cloudflare and AWS CloudFront</h3>
-          <p>One migration programme at Litehires Global. I worked on the security and traffic path: application discovery and inventory, TLS and ACM certificates, origin and cache checks, WAF policy mapping, and testing in a lower environment before production. Cutover was by DNS/CNAME with a reduced TTL and a rollback path to Akamai. I checked cache behaviour, TLS versions, response codes and WAF events afterwards, investigated 403 and 502 responses, validated rollback where it was required, and documented the findings. <a href="https://github.com/mdurgarao-tech/waf-security-labs/blob/main/docs/cdn-migration.md">Read the process notes</a>.</p>
+        <div class="case" style="padding-bottom:1.75rem">
+          <span class="tag lab">Lab project</span>
+          <h3><a href="https://github.com/mdurgarao-tech/waf-security-labs">waf-security-labs</a></h3>
+          <p>A Python WAF log analyzer that reads JSON-lines logs and summarizes the top rule IDs, source IPs, targeted URIs and attack types. It also has write-ups on SQL injection, XSS, path traversal and command injection. All sample data is synthetic and uses documentation IP ranges. No production or client logs.</p>
         </div>
-        <div class="proj">
-          <h3>Firewall rule review with FireMon</h3>
-          <p>Supported 50+ firewalls across Palo Alto, Fortinet, Check Point and Cisco ASA, and optimized 2,000+ rules with FireMon. I looked for shadowed and unused rules, and checked with the business owner before changing or removing a rule. <a href="https://github.com/mdurgarao-tech/Network-Security-Labs/blob/main/firewalls/firemon-rule-review.md">Read the process notes</a>.</p>
-        </div>
-        <div class="proj">
-          <h3>How I troubleshoot a 403 or 502</h3>
-          <p>A method, not one incident: find which layer sent the response, then follow the request through CDN, WAF and origin before changing anything. For false positives I add narrow exceptions and never disable a whole rule. <a href="https://github.com/mdurgarao-tech/waf-security-labs/blob/main/docs/troubleshooting-403-502.md">Read the method</a>.</p>
+        <div class="case" style="padding-bottom:0">
+          <span class="tag lab">Lab project</span>
+          <h3><a href="https://github.com/mdurgarao-tech/Network-Automation-Python">Network-Automation-Python</a></h3>
+          <p>Two small standard-library scripts. One validates IP addresses and checks whether they fall inside a network. The other pings a list of hosts and rejects unsafe input before running ping.</p>
         </div>
       </div>
     </div>
@@ -277,39 +408,16 @@
 
   <section id="skills" aria-labelledby="skills-h">
     <div class="wrap grid">
-      <div>
-        <h2 class="sec" id="skills-h">Skills</h2>
-        <p class="sub">Grouped by how I use them</p>
-      </div>
+      <div><h2 class="sec" id="skills-h">Skills</h2></div>
       <dl class="skills">
-        <dt>WAF and CDN</dt>
-        <dd>Akamai Kona Site Defender, Akamai CDN, Imperva, AWS WAF, Azure WAF, Cloudflare, FortiWeb, OWASP Top 10, false-positive tuning, DNS and TLS cutovers</dd>
-        <dt>Zero Trust and web gateways</dt>
-        <dd>Zscaler ZIA, ZPA and Client Connector, Netskope SWG, Blue Coat ProxySG, SAML and Azure AD SSO</dd>
-        <dt>Firewalls and networking</dt>
-        <dd>Palo Alto and Panorama, Fortinet, Check Point, Cisco ASA, FireMon, F5 LTM, OSPF, BGP, VLAN, NAT</dd>
-        <dt>Cloud and tools</dt>
-        <dd>AWS VPC, IAM, Security Groups and NACLs, Splunk, Microsoft Sentinel, ServiceNow, Wireshark, Python, Ansible</dd>
+        <div><dt>WAF &amp; Application Security</dt><dd>Akamai Kona, Imperva, AWS WAF, Cloudflare, FortiWeb, OWASP Top 10, false-positive tuning</dd></div>
+        <div><dt>CDN</dt><dd>Akamai CDN, Cloudflare, AWS CloudFront, DNS/CNAME, TLS/SSL, caching, origin troubleshooting</dd></div>
+        <div><dt>Network Security</dt><dd>Palo Alto and Panorama, Fortinet and FortiManager, Check Point, Cisco ASA, FireMon, NAT, ACLs</dd></div>
+        <div><dt>Zero Trust / SWG</dt><dd>Zscaler ZIA, ZPA, Client Connector, Netskope SWG, Blue Coat ProxySG</dd></div>
+        <div><dt>Networking</dt><dd>TCP/IP, DNS, HTTP/HTTPS, OSPF, BGP, VLAN, STP, F5 LTM, Cisco ACI</dd></div>
+        <div><dt>Cloud &amp; Automation</dt><dd>AWS security (VPC, IAM, Security Groups, NACLs), Python, Ansible, Terraform for WAF and security configuration</dd></div>
+        <div><dt>Monitoring / Operations</dt><dd>Splunk, Microsoft Sentinel, ServiceNow, Wireshark, tcpdump</dd></div>
       </dl>
-    </div>
-  </section>
-
-  <section id="projects" aria-labelledby="projects-h">
-    <div class="wrap grid">
-      <div>
-        <h2 class="sec" id="projects-h">Projects</h2>
-        <p class="sub">Public code on GitHub</p>
-      </div>
-      <div>
-        <div class="proj">
-          <h3><a href="https://github.com/mdurgarao-tech/waf-security-labs">WAF security labs</a></h3>
-          <p>Write-ups on SQL injection, XSS, path traversal and command injection, plus a Python tool that summarizes WAF logs: top rules, source IPs, targeted URIs and attack types. Sample data is synthetic.</p>
-        </div>
-        <div class="proj">
-          <h3><a href="https://github.com/mdurgarao-tech/Network-Automation-Python">Network automation scripts</a></h3>
-          <p>Two small standard-library scripts: one validates IP addresses and checks network membership, the other pings a list of hosts and rejects unsafe input.</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -317,9 +425,9 @@
     <div class="wrap grid">
       <div><h2 class="sec" id="certs-h">Certifications</h2></div>
       <ul class="certs">
-        <li><span>AWS Certified Security – Specialty (SCS-C02), score 825/1000</span><span class="d">Sep 2026</span></li>
-        <li><span>Cisco Certified Network Associate (CCNA)</span><span class="d">Mar 2026</span></li>
-        <li><span>Palo Alto Networks PCNSE</span><span class="d">In progress</span></li>
+        <li><span>AWS Certified Security – Specialty (SCS-C02), score 825/1000</span><span class="muted">Sep 2026</span></li>
+        <li><span>Cisco Certified Network Associate (CCNA)</span><span class="muted">Mar 2026</span></li>
+        <li><span>Palo Alto Networks PCNSE</span><span class="muted">In progress</span></li>
       </ul>
     </div>
   </section>
@@ -327,12 +435,13 @@
 
 <footer id="contact">
   <div class="wrap">
-    <p class="contact">
+    <h2>Contact</h2>
+    <p class="links">
       <a href="mailto:miriyala.durgarao.work@gmail.com">miriyala.durgarao.work@gmail.com</a>
       <a href="https://www.linkedin.com/in/miriyala-durgarao">LinkedIn</a>
       <a href="https://github.com/mdurgarao-tech">GitHub</a>
     </p>
-    <p>B.Tech in Computer Science and Engineering, 2019. Based in Hyderabad, India. English, Telugu and Hindi.</p>
+    <p class="small">B.Tech in Computer Science and Engineering, 2019. Based in Hyderabad, India. English, Telugu and Hindi.</p>
   </div>
 </footer>
 </body>
