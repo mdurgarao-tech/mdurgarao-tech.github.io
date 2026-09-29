@@ -147,6 +147,7 @@
     <strong>Miriyala Durga Rao</strong>
     <nav aria-label="Sections">
       <a href="#work">Experience</a>
+      <a href="#cases">Selected work</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
@@ -246,6 +247,29 @@
               <li>Supported 50+ firewalls across Palo Alto, Fortinet, Check Point and Cisco ASA, and reviewed 2,000+ rules with FireMon.</li>
             </ul>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases" aria-labelledby="cases-h">
+    <div class="wrap grid">
+      <div>
+        <h2 class="sec" id="cases-h">Selected work</h2>
+        <p class="sub">Real work at previous employers, described without customer details</p>
+      </div>
+      <div>
+        <div class="proj">
+          <h3>CDN migration: Akamai to Cloudflare and AWS CloudFront</h3>
+          <p>One migration programme at Litehires Global. I worked on the security and traffic path: application discovery and inventory, TLS and ACM certificates, origin and cache checks, WAF policy mapping, and testing in a lower environment before production. Cutover was by DNS/CNAME with a reduced TTL and a rollback path to Akamai. I checked cache behaviour, TLS versions, response codes and WAF events afterwards, investigated 403 and 502 responses, validated rollback where it was required, and documented the findings. <a href="https://github.com/mdurgarao-tech/waf-security-labs/blob/main/docs/cdn-migration.md">Read the process notes</a>.</p>
+        </div>
+        <div class="proj">
+          <h3>Firewall rule review with FireMon</h3>
+          <p>Supported 50+ firewalls across Palo Alto, Fortinet, Check Point and Cisco ASA, and optimized 2,000+ rules with FireMon. I looked for shadowed and unused rules, and checked with the business owner before changing or removing a rule. <a href="https://github.com/mdurgarao-tech/Network-Security-Labs/blob/main/firewalls/firemon-rule-review.md">Read the process notes</a>.</p>
+        </div>
+        <div class="proj">
+          <h3>How I troubleshoot a 403 or 502</h3>
+          <p>A method, not one incident: find which layer sent the response, then follow the request through CDN, WAF and origin before changing anything. For false positives I add narrow exceptions and never disable a whole rule. <a href="https://github.com/mdurgarao-tech/waf-security-labs/blob/main/docs/troubleshooting-403-502.md">Read the method</a>.</p>
         </div>
       </div>
     </div>
