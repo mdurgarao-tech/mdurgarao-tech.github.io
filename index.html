@@ -3,17 +3,317 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Miriyala Durga Rao</title>
-<meta http-equiv="refresh" content="0; url=https://edgeguard-chronicle.lovable.app">
-<link rel="canonical" href="https://edgeguard-chronicle.lovable.app">
+<title>Miriyala Durga Rao | WAF & Network Security Engineer</title>
+<meta name="description" content="WAF and network security engineer in Hyderabad. Akamai, Imperva, AWS WAF, Cloudflare, Zscaler, multi-vendor firewalls.">
 <style>
-  body { font-family: system-ui, sans-serif; max-width: 34rem; margin: 4rem auto; padding: 0 1rem; line-height: 1.5; }
+  :root {
+    --bg: #eef2f5;
+    --surface: #ffffff;
+    --ink: #16232e;
+    --muted: #506272;
+    --line: #cdd8e0;
+    --accent: #1f5fbf;
+    --block: #b4432f;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101a23;
+      --surface: #16232e;
+      --ink: #e8eef3;
+      --muted: #9db0bf;
+      --line: #2b3d4b;
+      --accent: #6fa3ef;
+      --block: #e58a76;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, .skip:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  .skip { position: absolute; left: -999px; top: 0; background: var(--surface); padding: .5rem 1rem; }
+  .skip:focus { left: 1rem; top: 1rem; z-index: 10; }
+  .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  header.top { padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; flex-wrap: wrap; gap: .75rem 2rem; justify-content: space-between; align-items: baseline; }
+  header.top strong { font-family: var(--serif); font-size: 1.15rem; }
+  nav a { margin-right: 1.25rem; color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--ink); text-decoration: underline; }
+
+  .hero { padding: 4.5rem 0 3rem; }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 7vw, 4.75rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.25rem;
+  }
+  .lede { font-size: 1.3rem; max-width: 40rem; margin: 0 0 .75rem; }
+  .facts { color: var(--muted); max-width: 40rem; margin: 0; }
+
+  /* The request path: the one memorable element */
+  .path { margin: 3.5rem 0 0; }
+  .path h2 { font-family: var(--serif); font-size: 1.3rem; margin: 0 0 .35rem; }
+  .path p.note { color: var(--muted); margin: 0 0 1.75rem; max-width: 42rem; }
+  .hops {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+    position: relative;
+  }
+  .hops::before {
+    content: ""; position: absolute; left: 10%; right: 10%; top: 1.05rem; height: 2px;
+    background: var(--line);
+  }
+  .hops::after {
+    content: ""; position: absolute; left: 10%; top: calc(1.05rem - 5px); width: 12px; height: 12px;
+    border-radius: 50%; background: var(--accent);
+    animation: travel 3.2s ease-in-out 0.4s 1 both;
+  }
+  @keyframes travel {
+    from { left: 10%; opacity: 1; }
+    60%  { left: 50%; }
+    to   { left: calc(90% - 12px); opacity: 1; }
+  }
+  .hop { text-align: center; padding: 0 .6rem; position: relative; }
+  .dot {
+    display: block; width: 2.1rem; height: 2.1rem; margin: 0 auto .75rem;
+    border-radius: 50%; background: var(--surface); border: 2px solid var(--muted);
+    position: relative; z-index: 1;
+  }
+  .hop.mine .dot { border-color: var(--accent); background: var(--accent); }
+  .hop.waf .dot { border-color: var(--block); background: var(--block); }
+  .hop b { display: block; font-family: var(--serif); font-size: 1.05rem; }
+  .hop span { display: block; color: var(--muted); font-size: .92rem; line-height: 1.45; margin-top: .25rem; }
+
+  section { padding: 3rem 0; border-top: 1px solid var(--line); }
+  .grid { display: grid; grid-template-columns: 13rem 1fr; gap: 1.5rem 3rem; }
+  h2.sec { font-family: var(--serif); font-size: 1.5rem; margin: 0; line-height: 1.2; }
+  .sub { color: var(--muted); font-size: .95rem; margin: .35rem 0 0; }
+
+  .job { display: grid; grid-template-columns: 9.5rem 1fr; gap: .25rem 2rem; padding: 0 0 2rem; }
+  .job:last-child { padding-bottom: 0; }
+  .when { color: var(--muted); font-size: .95rem; }
+  .job h3 { font-family: var(--serif); font-size: 1.15rem; margin: 0; }
+  .job .co { color: var(--muted); margin: 0 0 .5rem; }
+  ul.plain { margin: 0; padding-left: 1.1rem; }
+  ul.plain li { margin: 0 0 .35rem; }
+
+  .skills dt { font-weight: 600; margin-top: 1rem; }
+  .skills dt:first-child { margin-top: 0; }
+  .skills dd { margin: .15rem 0 0; color: var(--muted); }
+
+  .proj { padding: 0 0 1.5rem; }
+  .proj:last-child { padding-bottom: 0; }
+  .proj h3 { font-family: var(--serif); font-size: 1.15rem; margin: 0 0 .25rem; }
+  .proj p { margin: 0; color: var(--muted); }
+
+  .certs { list-style: none; padding: 0; margin: 0; }
+  .certs li { padding: .5rem 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .certs li:last-child { border-bottom: 0; }
+  .certs .d { color: var(--muted); }
+
+  footer { padding: 2.5rem 0 3.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .95rem; }
+  .contact a { display: inline-block; margin-right: 1.5rem; font-size: 1.1rem; }
+
+  @media (max-width: 52rem) {
+    .grid, .job { grid-template-columns: 1fr; }
+    .hops { grid-template-columns: 1fr; gap: 1.5rem; }
+    .hops::before, .hops::after { display: none; }
+    .hop { text-align: left; display: grid; grid-template-columns: 2.1rem 1fr; gap: 0 1rem; padding: 0; }
+    .dot { margin: .15rem 0 0; grid-row: 1 / span 2; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hops::after { animation: none; display: none; }
+  }
 </style>
 </head>
 <body>
-<h1>Miriyala Durga Rao</h1>
-<p>WAF &amp; Network Security Engineer</p>
-<p>My portfolio has moved to <a href="https://edgeguard-chronicle.lovable.app">edgeguard-chronicle.lovable.app</a>. You should be redirected automatically.</p>
-<p><a href="https://www.linkedin.com/in/miriyala-durgarao">LinkedIn</a> · <a href="https://github.com/mdurgarao-tech">GitHub</a></p>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <strong>Miriyala Durga Rao</strong>
+    <nav aria-label="Sections">
+      <a href="#work">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="hero">
+      <h1>I keep web applications reachable and hard to break.</h1>
+      <p class="lede">WAF and network security engineer based in Hyderabad. I tune rules, review blocked traffic, and move applications between CDNs without dropping users.</p>
+      <p class="facts">6.4 years in network security, about 3 to 4 of them on WAF and CDN work. Strongest on Akamai Kona Site Defender, Imperva, AWS WAF and Cloudflare. Available to join immediately.</p>
+
+      <div class="path">
+        <h2>Where my work sits in a request</h2>
+        <p class="note">A request crosses several layers before it reaches an application. These are the ones I work on, and what I do at each.</p>
+        <ol class="hops">
+          <li class="hop">
+            <i class="dot"></i>
+            <div><b>Client</b><span>Users and Zscaler-managed devices, with ZIA and ZPA policy</span></div>
+          </li>
+          <li class="hop mine">
+            <i class="dot"></i>
+            <div><b>CDN edge</b><span>Akamai, Cloudflare, CloudFront: onboarding, DNS and TLS cutovers, migrations</span></div>
+          </li>
+          <li class="hop waf">
+            <i class="dot"></i>
+            <div><b>WAF</b><span>Akamai Kona, Imperva, AWS WAF, Azure WAF: rule tuning and false positives</span></div>
+          </li>
+          <li class="hop mine">
+            <i class="dot"></i>
+            <div><b>Firewall</b><span>Palo Alto, Fortinet, Check Point, Cisco ASA: policy changes and rule cleanup</span></div>
+          </li>
+          <li class="hop">
+            <i class="dot"></i>
+            <div><b>Origin</b><span>Application teams: I trace a failure through each layer to find where it happens</span></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <section id="work" aria-labelledby="work-h">
+    <div class="wrap grid">
+      <div>
+        <h2 class="sec" id="work-h">Experience</h2>
+        <p class="sub">Most recent first</p>
+      </div>
+      <div>
+        <div class="job">
+          <div class="when">Jul 2026 to Sep 2026</div>
+          <div>
+            <h3>WAF & Network Security Engineer</h3>
+            <p class="co">High Noon Consulting, working on the Deloitte USI global WAF team</p>
+            <ul class="plain">
+              <li>Supported Akamai Kona Site Defender WAF for enterprise web applications through ServiceNow requests.</li>
+              <li>Handled onboarding, audit and ruleset-upgrade requests for Cloud Native (Azure) WAF applications.</li>
+              <li>Reviewed WAF events and false-positive blocks, and tuned rules to keep legitimate traffic flowing.</li>
+              <li>Traced application access problems across WAF policy, HTTP headers, response codes and SAML/Azure AD sign-in.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="when">Nov 2025 to Mar 2026</div>
+          <div>
+            <h3>Network Security Engineer</h3>
+            <p class="co">Unizen Technologies, Bangalore</p>
+            <ul class="plain">
+              <li>Onboarded applications and managed policies on Imperva WAF, AWS WAF and Cloudflare.</li>
+              <li>Investigated SQL injection, XSS, file inclusion and command injection attempts using WAF and Splunk logs.</li>
+              <li>Worked with application teams to tune rules and add exceptions only where traffic was legitimate.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="when">May 2025 to Oct 2025</div>
+          <div>
+            <h3>Cybersecurity Consultant (contract)</h3>
+            <p class="co">LTIMindtree, Hyderabad</p>
+            <ul class="plain">
+              <li>Administered Zscaler ZIA and ZPA: URL filtering, SSL inspection, application segments and access policies.</li>
+              <li>Integrated Zscaler with SAML/SSO and Azure AD, and troubleshot Client Connector issues.</li>
+              <li>Supported user migration from Blue Coat ProxySG to Zscaler, checking policies before and after each change.</li>
+              <li>Worked on Netskope SWG policies.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="when">Mar 2020 to Apr 2025</div>
+          <div>
+            <h3>Network Security Analyst</h3>
+            <p class="co">Litehires Global, Bangalore</p>
+            <ul class="plain">
+              <li>Managed Akamai Kona Site Defender WAF and CDN: onboarding, policy and rule configuration, event monitoring and false-positive tuning.</li>
+              <li>Supported production CDN migrations from Akamai to Cloudflare and to AWS CloudFront, with staged cutovers and rollback to Akamai ready.</li>
+              <li>Supported 50+ firewalls across Palo Alto, Fortinet, Check Point and Cisco ASA, and reviewed 2,000+ rules with FireMon.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-h">
+    <div class="wrap grid">
+      <div>
+        <h2 class="sec" id="skills-h">Skills</h2>
+        <p class="sub">Grouped by how I use them</p>
+      </div>
+      <dl class="skills">
+        <dt>WAF and CDN</dt>
+        <dd>Akamai Kona Site Defender, Akamai CDN, Imperva, AWS WAF, Azure WAF, Cloudflare, FortiWeb, OWASP Top 10, false-positive tuning, DNS and TLS cutovers</dd>
+        <dt>Zero Trust and web gateways</dt>
+        <dd>Zscaler ZIA, ZPA and Client Connector, Netskope SWG, Blue Coat ProxySG, SAML and Azure AD SSO</dd>
+        <dt>Firewalls and networking</dt>
+        <dd>Palo Alto and Panorama, Fortinet, Check Point, Cisco ASA, FireMon, F5 LTM, OSPF, BGP, VLAN, NAT</dd>
+        <dt>Cloud and tools</dt>
+        <dd>AWS VPC, IAM, Security Groups and NACLs, Splunk, Microsoft Sentinel, ServiceNow, Wireshark, Python, Ansible</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-h">
+    <div class="wrap grid">
+      <div>
+        <h2 class="sec" id="projects-h">Projects</h2>
+        <p class="sub">Public code on GitHub</p>
+      </div>
+      <div>
+        <div class="proj">
+          <h3><a href="https://github.com/mdurgarao-tech/waf-security-labs">WAF security labs</a></h3>
+          <p>Write-ups on SQL injection, XSS, path traversal and command injection, plus a Python tool that summarizes WAF logs: top rules, source IPs, targeted URIs and attack types. Sample data is synthetic.</p>
+        </div>
+        <div class="proj">
+          <h3><a href="https://github.com/mdurgarao-tech/Network-Automation-Python">Network automation scripts</a></h3>
+          <p>Two small standard-library scripts: one validates IP addresses and checks network membership, the other pings a list of hosts and rejects unsafe input.</p>
+        </div>
+        <div class="proj">
+          <h3>Study notes in progress</h3>
+          <p>Notes on <a href="https://github.com/mdurgarao-tech/Zscaler-Labs">Zscaler</a>, <a href="https://github.com/mdurgarao-tech/Network-Security-Labs">network security</a> and <a href="https://github.com/mdurgarao-tech/AWS-Security-Labs">AWS security</a>. These repos are mostly outlines so far.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="certs-h">
+    <div class="wrap grid">
+      <div><h2 class="sec" id="certs-h">Certifications</h2></div>
+      <ul class="certs">
+        <li><span>AWS Certified Security – Specialty (SCS-C02), score 825/1000</span><span class="d">Sep 2026</span></li>
+        <li><span>Cisco Certified Network Associate (CCNA)</span><span class="d">Mar 2026</span></li>
+        <li><span>Palo Alto Networks PCNSE</span><span class="d">In progress</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="contact">
+      <a href="mailto:miriyala.durgarao.work@gmail.com">miriyala.durgarao.work@gmail.com</a>
+      <a href="https://www.linkedin.com/in/miriyala-durgarao">LinkedIn</a>
+      <a href="https://github.com/mdurgarao-tech">GitHub</a>
+    </p>
+    <p>B.Tech in Computer Science and Engineering, 2019. Based in Hyderabad, India. English, Telugu and Hindi.</p>
+  </div>
+</footer>
 </body>
 </html>
